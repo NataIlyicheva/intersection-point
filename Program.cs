@@ -9,17 +9,17 @@
         Console.Write("Прямые не пересекаются. Значения k1 и k2 должны отличаться. ");
         Console.Write("Пожалуйста, измените значение k1 или k2.");
     }
-    
-    double coordinateX;
-    double coordinateY;
 
-    coordinateX = (double)(b2 - b1) / (k1 - k2);
-    coordinateY = (double)(b1 * k2 - b2 * k1) / (k2 - k1);
+double coordPointX;
+double coordPointY;
 
-    coordinateX = Math.Round(coordinateX, 1);
-    coordinateY = Math.Round(coordinateY, 1);
+coordPointX = (double)(b2 - b1) / (k1 - k2);
+coordPointY = (double)(b1 * k2 - b2 * k1) / (k2 - k1);
 
-    return (coordinateX, coordinateY);
+coordPointX = Math.Round(coordPointX, 1);
+coordPointY = Math.Round(coordPointY, 1);
+
+return (coordPointX, coordPointY);
 }
 
 Console.WriteLine("Введите значение b1:");
