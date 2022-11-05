@@ -13,8 +13,8 @@
 double coordPointX;
 double coordPointY;
 
-coordPointX = (double)(b2 - b1) / (k1 - k2);
-coordPointY = (double)(b1 * k2 - b2 * k1) / (k2 - k1);
+coordPointX = (b2 - b1) / (k1 - k2);
+coordPointY = k1*coordPointX + b1;
 
 coordPointX = Math.Round(coordPointX, 1);
 coordPointY = Math.Round(coordPointY, 1);
@@ -22,15 +22,15 @@ coordPointY = Math.Round(coordPointY, 1);
 return (coordPointX, coordPointY);
 }
 
-Console.WriteLine("Введите значение b1:");
-int inputB1 = int.Parse(Console.ReadLine()!);
 Console.WriteLine("Введите значение k1:");
-int inputK1 = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите значение b2:");
-int inputB2 = int.Parse(Console.ReadLine()!);
+double inputK1 = double.Parse(Console.ReadLine()!);
 Console.WriteLine("Введите значение k2:");
-int inputK2 = int.Parse(Console.ReadLine()!);
+double inputK2 = double.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите значение b1:");
+double inputB1 = double.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите значение b2:");
+double inputB2 = double.Parse(Console.ReadLine()!);
 
-(double X, double Y) = GetCrossPointCoordinates(inputB1, inputK1, inputB2, inputK2);
+(double X, double Y) = GetCrossPointCoordinates(inputK1, inputK2, inputB1, inputB2);
 
-Console.WriteLine($"Координаы точки пересечения двух прямых: {X}, {Y}");
+Console.WriteLine($"Координаты точки пересечения двух прямых: {X}, {Y}");
